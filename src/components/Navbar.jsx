@@ -1,17 +1,18 @@
-// src/components/Navbar.jsx
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav style={{ backgroundColor: "#0044cc", padding: "10px" }}>
-      <ul style={{ display: "flex", gap: "20px", listStyle: "none", margin: 0 }}>
-        <li><Link to="/" style={{ color: "white", textDecoration: "none" }}>Home</Link></li>
-        <li><Link to="/students" style={{ color: "white", textDecoration: "none" }}>Students</Link></li>
-        <li><Link to="/companies" style={{ color: "white", textDecoration: "none" }}>Companies</Link></li>
-        <li><Link to="/interactions" style={{ color: "white", textDecoration: "none" }}>Interactions</Link></li>
-      </ul>
-    </nav>
+    <AppBar position="static" sx={{ backgroundColor: "#1565c0" }}>
+      <Toolbar>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          Placement Interaction System
+        </Typography>
+        <Button color="inherit" component={Link} to="/">Home</Button>
+        <Button color="inherit" component={Link} to="/students">Students</Button>
+        <Button color="inherit" component={Link} to="/companies">Companies</Button>
+        <Button color="inherit" component={Link} to="/register">Register</Button> {/* ✅ New Nav Link */}
+      </Toolbar>
+    </AppBar>
   );
-};
-
-export default Navbar;
+}

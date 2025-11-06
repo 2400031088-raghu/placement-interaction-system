@@ -1,22 +1,23 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { UserProvider } from "./context/UserContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Students from "./pages/Students";
-import AddStudent from "./pages/AddStudent";
 import Companies from "./pages/Companies";
+import Interactions from "./pages/Interactions";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
-    <UserProvider>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/students" element={<Students />} />
-        <Route path="/add-student" element={<AddStudent />} />
         <Route path="/companies" element={<Companies />} />
+        <Route path="/interactions" element={<Interactions />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
-    </UserProvider>
+    </Router>
   );
 }
+
